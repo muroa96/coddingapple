@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Documnet</title>
+    <link rel="stylesheet" href = "main.css">
+  </head>
+  <body>
+    <div class="alert-box" id="alert">알림창임
+      <button onclick="알림창('close')">닫기</button>
+    </div>
+    <button onclick="알림창('open')">버튼</button>
+    
+    <script>
+       function 알림창(el) {
+        if (el==='open') {
+          document.getElementById('alert').style.display='block';
+        } else {
+          document.getElementById('alert').style.display='none';
+        }
+       }
+
+
+
+       
+    </script>
+  </body>
+</html>
