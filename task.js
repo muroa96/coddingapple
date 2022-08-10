@@ -41,3 +41,19 @@ function 삼육구(nums) {
 }
 
 삼육구(13);
+
+
+// 응용2
+function 합격했냐(x,y){
+  if (x<0 || y<0 || x>100 || y>100) {
+    console.log('장난하지마세요');
+  }else if (x<40 || y<40) {
+    console.log('불합격');
+  } else if (x+y>=120) {
+    console.log('합격');
+  } else {
+    console.log('불합격');
+  }
+}
+
+합격했냐(100,-20)

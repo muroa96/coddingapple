@@ -1,0 +1,1 @@
+CoddingApple 강의를 바탕으로 배우는 JS 내용입니다.
