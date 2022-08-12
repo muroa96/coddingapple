@@ -130,4 +130,27 @@ $('.btn').on('click', function(){});
 
 * let, const : 재선언 불가, 중괄호 안에 있는 경우 중괄호 안에서만 사용 가능
 
-  ![image-20220810183204010](md-images/image-20220810183204010.png)
+  ![image-20220810183204010](md-images/image-20220810183204010.png)]
+
+
+
+### **setTimeout(), setInterval()**
+
+1. setTimeout(function(){}, 1000) : 1초(1000ms)후 function 실행
+2. setInterval(function(){}, 1000) : 1초(1000ms)마다 function 실행
+
+
+
+### **정규식**
+
+* /abc/.test('abcabc')  : true
+* 정규식 종류
+  * /[a-z]/ : a~z(소문자)
+  * /[A-Z]/ : A~Z(소문자)
+  * /[ㄱ-ㅎ가-힣]/ : 한국어
+  * /\S/ : 아무 문자(특수기호도 포함)
+  * /^a/ : a라는 기호로 시작하는가
+  * /a$/ : a로 끝나는가
+  * /a|b/ : a또는 b가 들어가있는가
+  * /\S+@\S+\.\S+/ : 이메일 형식 (+는 왼쪽 문자 반복 검색)
+  * 
