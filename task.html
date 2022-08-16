@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
 
-<head></head>
+</head>
 
 <body>
   <p>태조 이성계가 태어난 년도는?</p>
@@ -93,17 +94,30 @@
 
     //Q5
     cnt = 0
-    document.getElementById('answer')[0].addEventListener('input',function(e) {
+    document.getElementById('answer')[0].addEventListener('input', function (e) {
       ans = 1335
-      cnt+=1
+      cnt += 1
       console.log(e.value)
-      if (e.value===ans) {
+      if (e.value === ans) {
         alert('성공')
-      } else if (cnt==3 && e.value!=ans) {
+      } else if (cnt == 3 && e.value != ans) {
         alert('멍청아')
       }
     });
 
+    function convertMs(m, s) {
+      console.log((m * 60 + s) * 1000);
+    }
+    convertMs(1, 30)
+
+    function dc(price, bool) {
+      if (bool==false) {
+        console.log(parseFloat((price*0.9).toFixed(1)));
+      } else {
+        console.log(parseFloat((price*0.9-1.5).toFixed(1)));
+      }
+    }
+    dc(10,true)
   </script>
 </body>
 
