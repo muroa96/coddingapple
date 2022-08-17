@@ -38,6 +38,7 @@
     </div>
   </nav>
 
+
   <ul class="list-group">
     <li class="list-group-item">An item</li>
     <li class="list-group-item">A second item</li>
@@ -51,6 +52,7 @@
     <button id="login" class="login-btn">로그인</button>
   </div>
 
+  
   <div class="alert alert-danger">
     <span class="min">5</span>초 이내 구매시 사은품 증정!
   </div>
@@ -76,7 +78,8 @@
     <button class="before">이전</button>
   </div>
 
-  
+  <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptates quasi repudiandae! Odit illum saepe ut sint possimus dolores adipisci cum sit consectetur, deleniti laboriosam quasi incidunt qui totam amet.</div>
+  <div class="site-scroll" style="height: 1000px"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -161,7 +164,27 @@
       }
     });
     
-    
+    // scroll bar
+    window.addEventListener('scroll', function() {
+      console.log(window.scrollY)
+      if (window.scrollY>=100) {
+        $('.navbar-brand').css('font-size', '20px');
+      } else if (window.scrollY<100) {
+        $('.navbar-brand').css('font-size', '30px');
+      }
+    });
+
+    //div의 스크롤바 내린 양 + 눈에 보이는 div높이==div의 실제 높이
+    $('.lorem').on('scroll', function () {
+      var 스크롤양 = document.querySelector('.lorem').scrollTop;
+      var 실제높이 = document.querySelector('.lorem').scrollHeight;
+      var 높이 = document.querySelector('.lorem').clientHeight;
+      if (실제높이-10<=스크롤양+높이) {
+        alert(다읽음);
+      }
+
+    });
+
   </script>
 </body>
 

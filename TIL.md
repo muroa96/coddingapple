@@ -1,6 +1,6 @@
-2022-08-10
+### **JS**
 
-
+***
 
 ### **셀렉터**
 
@@ -214,4 +214,103 @@ console.log(1.1+0.3)을 하면 1.4가 아니라 1.400000000001이 나온다.
    parseFloat('123')
 
    parseInt('123')
+
+
+
+### **JS파일 link됐는지 확인하는 법 **
+
+alert();
+
+코드를 실행시킬 시 홈페이지에 alert창이 제대로 뜬다면 link가 된 것이다.
+
+
+
+### **스크롤**
+
+window.addEventListener('scroll', function (){});
+
+$(window).on('scroll', function(){})
+
+스크롤을 내릴 때 마다 function 실행
+
+
+
+window.scrollY 
+
+$(window).scrollTop()
+
+스크롤이 얼마큼 내려가는지를 알 수 있음
+
+
+
+document.querySelector('.lorem').scrollHeight
+
+div 스크롤의 크기
+
+
+
+window.scrollTo(x,y);
+
+강제로 (x,y)좌표로 스크롤
+
+
+
+window.scrollBy(x,y);
+
+$(window).scrollTop(x,y);
+
+현재 위치에서 (x,y)만큼 스크롤
+
+
+
+overflow-y: scroll
+
+안에 내용이 넘치면 자동으로 스크롤바 생성
+
+
+
+스크롤 다룰 때 주의 사항
+
+1. 스크롤이벤트리스너 안의 코드는 1초에 60번 이상 실행됩니다. 
+
+   그래서 스크롤 이벤트리스너는 많이 달면 성능저하가 일어나니 스크롤바 1개마다 1개만 씁시다. 
+
+ 
+
+2. 스크롤이벤트리스너 안의 코드는 1초에 여러번 실행되다보니 바닥체크하는 코드도 여러번 실행될 수 있습니다. 
+
+   숙제2에서 alert가 2번 뜨고 그럴 수 있다는 뜻입니다.
+
+   그걸 방지하고 싶으면 구글에 검색해보는 것도 나쁘지않습니다. 변수같은걸 활용하면 됩니다. 
+
+
+
+scrollTop : 현재 웹페이지 스크롤양
+
+scrollHeight: 현재 웹페이지 실제 높이
+
+clientHeight: 현재 웹페이지 보이는 높이
+
+
+
+### **CSS**
+
+***
+
+### **rem**
+
+* css단위
+* 1rem = 16px
+
+
+
+position: fixed;
+
+* 위치 상단 고정
+
+
+
+z-index: 5; 
+
+* 앞으로 보내기
 
