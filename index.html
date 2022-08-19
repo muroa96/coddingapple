@@ -12,6 +12,29 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand">JSShop</span>
+      <span class="badge bg-dark">Dark 🔄</span>
+      <button class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <ul class="list-group">
+    <li class="list-group-item">An item</li>
+    <li class="list-group-item">A second item</li>
+    <li class="list-group-item">A third item</li>
+    <li class="list-group-item">A fourth item</li>
+    <li class="list-group-item">And a fifth one</li>
+  </ul>
+
+  <div class="main-bg">
+    <h4>Shirts on Sales</h4>
+    <button id="login" class="btn btn-danger">로그인</button>
+  </div>
+
   <div class="black-bg">
     <div class="white-bg">
       <h4>로그인하세요</h4>
@@ -28,34 +51,6 @@
     </div>
   </div>
 
-  <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <span class="navbar-brand">JSShop</span>
-      <span class="badge bg-dark">Dark 🔄</span>
-      <button class="navbar-toggler" type="button">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </nav>
-
-
-  <ul class="list-group">
-    <li class="list-group-item">An item</li>
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
-    <li class="list-group-item">A fourth item</li>
-    <li class="list-group-item">And a fifth one</li>
-  </ul>
-
-  <div class="main-bg">
-    <h4>Shirts on Sales</h4>
-    <button id="login" class="login-btn">로그인</button>
-  </div>
-
-  
-  <div class="alert alert-danger">
-    <span class="min">5</span>초 이내 구매시 사은품 증정!
-  </div>
 
   <div style="overflow: hidden">
     <div class="slide-container">
@@ -112,9 +107,9 @@
     $('.badge').on('click', function () {
       count += 1;
       if (count % 2 != 0) {
-        $('.badge').html('Light');
+        $('.badge').html('Light🔄');
       } else {
-        $('.badge').html('Dark');
+        $('.badge').html('Dark🔄');
       }
     });
 
@@ -184,6 +179,15 @@
       }
 
     });
+    $('#login').on('click', function() {
+      $('.black-bg').toggleClass('show-modal');
+    });
+
+    document.querySelector('.black-bg').addEventListener('click', function (e) {
+      if (e.target == document.querySelector('.black-bg')) {
+        document.querySelector('.black-bg').classList.remove('show-modal');
+      }
+    })
 
   </script>
 </body>

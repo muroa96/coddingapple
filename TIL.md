@@ -43,6 +43,7 @@ classList.toggle : 클래스리스트 추가/제거
 
 
 ### JQuery
+***
 
 $('#ssd') id
 
@@ -60,7 +61,13 @@ jquery는 여러개 요소 리스트일 경우, 자동으로 다 순회해서 �
 
 $('.btn').on('click', function(){});
 
+$('.clss')은 모든 btn 클래스를 다 찾아준다(querySElectorAll처럼)
+만약 특정 클래스만 선택하고 싶으면 eq를 쓰면 된다.
+$('.class').eq(0).on('click', function(){})
 
+<br>
+자주 쓰는(반복적인) 셀렉터는 변수에 넣어서 쓰자.
+셀렉터 문법은 작동 시간이 오래 걸리므로, 반복적으로 사용할 경우 변수에 담아서 쓰는 것이 좋다(querySelector도 마찬가지)
 
 ### **애니메이션 만들기**
 
@@ -291,7 +298,15 @@ scrollHeight: 현재 웹페이지 실제 높이
 
 clientHeight: 현재 웹페이지 보이는 높이
 
+### **반복문**
+for (let i=0; i<3; i++){
+  console.log('하이요')
+}
+반복문의 경우 변수 지정을 무조건 let으로 하는것이 좋다.
 
+### **length**
+document.getElementsByClassName('.class).length
+$(.'class').length
 
 ### **CSS**
 
@@ -313,4 +328,30 @@ position: fixed;
 z-index: 5; 
 
 * 앞으로 보내기
+
+
+
+### **이벤트 버블링**
+어떤 HTML 태그에 이벤트가 발생하면 그 모든 상위요소까지 이벤트가 실행되는 현상
+다음과 같이 해결
+
+document.querySelector('.class').addEventListener('click', function(e) {
+  e.target;
+  e.currentTarget;
+  e.preventDefault();
+  e.stopPropagation();
+})
+
+e.target : 실제 클릭한 요소 알려줌(이벤트 발생한 곳)
+e.currentTarget : 지금 이벤트리스너가 달린 곳 알려줌(this랑 같음)
+e.preventDefault() : 이벤트 기본 동작을 막아줌
+e.stopPropagation() : 상위요소로의 이벤트 버블링을 중단해줌
+
+### **dataset**
+dataset을 통해 html 안에 몰래 정보를 숨겨높을 수 있다.
+
+<div data-데이터이름="값"></div> 
+
+값을 출력하는 방법은 다음과 같다.
+document.querySelector('.tab-button').dataset.데이터이름
 
