@@ -355,3 +355,12 @@ dataset을 통해 html 안에 몰래 정보를 숨겨높을 수 있다.
 값을 출력하는 방법은 다음과 같다.
 document.querySelector('.tab-button').dataset.데이터이름
 
+### **this**
+1. 그냥 쓰거나 일반 함수 안에서 쓰면 {window}
+2. 오브젝트 내 함수 안에서 쓰면 그 함수를 가지고 있는 오브젝트 의미
+3. 기계 안에서 쓰면 새로 생성되는 오브젝트(instance),(this.이름)
+
+
+함수나 변수를 전역공간에서 만들면 {window}에서 보관한다.
+* window : global object
+
