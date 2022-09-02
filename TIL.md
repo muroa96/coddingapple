@@ -359,6 +359,9 @@ document.querySelector('.tab-button').dataset.데이터이름
 1. 그냥 쓰거나 일반 함수 안에서 쓰면 {window}
 2. 오브젝트 내 함수 안에서 쓰면 그 함수를 가지고 있는 오브젝트 의미
 3. 기계 안에서 쓰면 새로 생성되는 오브젝트(instance),(this.이름)
+4. 이벤트리스너 안에서는 e.currentTarget과 같은 의미
+   지금 이벤트가 동작하는 곳
+
 
 
 함수나 변수를 전역공간에서 만들면 {window}에서 보관한다.
