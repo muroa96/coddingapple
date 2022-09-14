@@ -24,7 +24,7 @@ querySelectorAll() : 여러개 찾아줌 [1, 2, 3, ...] ->querySelectorAll()[0]
 
 
 
-기존 방식 : <button onclick="">
+기존 방식 : ```<button onclick="">```
 
 addEventListener() : 이벤트 감지 
 
@@ -367,3 +367,56 @@ document.querySelector('.tab-button').dataset.데이터이름
 함수나 변수를 전역공간에서 만들면 {window}에서 보관한다.
 * window : global object
 
+### 상속(inheritance)
+상속해주는것은 부모, 상속받는 오브젝트는 자식
+constructor, prototype방법
+
+### constructor
+object의 경우 그냥 복사하면 안된다-> 안전하게 복사하는 방법: constructor
+```
+function 기계(name, age){
+  this.name = name;
+  this.age = age;
+  this.sayHi = function() {
+    console.log(this.name);
+  }
+}
+
+var 힉생1 = new 기계('민수', 20);
+민수.sayHi();
+```
+
+### ***prototype***
+유전자를 보관하는 일종의 비밀공간
+```
+function 기계(){
+  this.name = 'Kim';
+  this.age = 15;
+}
+기계.gender = '남';
+var 학생1 = new 기계();
+기계.prototype.gender = '남';
+```
+오브젝트에서 데이터를 뽑을 때 확인하는 순서
+1. 내가 직접 가지고 있는지 검사
+2. 내가 가지고 있지 않으면 부모 유전자들을 차례로 검사(부모->부모의 부모->...)
+
+prototype의 특징
+* prototype에는 값을 여러개 부여할 수 있다.
+* prototype에 추가된 데이터들은 자식들이 직접 가지는것이 아닌, 부모만 가지고 있다.
+* prototype은 constructor 함수에만 생성
+* 부모의 prototype을 확인하고 싶으면 ```__proto__```
+* __proto__를 직접 등록하면 object끼리 상속기능을 구현 가능함
+  ```
+  var 부모 = { name : 'Kim' };
+  var 자식 = {};
+
+  자식.__proto__ = 부모;
+  console.log(자식.name);
+  ```
+* 콘솔창에 항상 prototype정보들이 출력
+  
+
+### getter/setter
+* 함수의 데이터의 무결정을 보존(immutable한 원본 데이터)
+* 

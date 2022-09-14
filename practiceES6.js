@@ -78,3 +78,100 @@ function 글자세기(e) {
   console.log(dic)
 }
 글자세기('aacbbb');
+
+class 부모 {
+  constructor() {
+    this.name= 'Kim';
+    this.sayHi = function(){console.log()}
+  }
+}
+
+var 자식 = new 부모();
+
+function 쇼핑몰(na, pr) {
+  this.name= na;
+  this.price = pr
+  this.부가세 = function() {{
+    console.log(this.price*0.1)
+  }}
+}
+
+var product1 = new 쇼핑몰('shirts', 50000);
+var product2 = new 쇼핑몰('pants', 60000);
+
+console.log(product1);
+console.log(product2);
+product1.부가세();
+
+
+function 기계(){
+  this.name = 'Kim';
+  this.age = 15;
+}
+var 학생1 = new 기계();
+var 학생2 = new 기계();
+
+console.log(기계.prototype);
+
+function Parent() {
+  this.name= 'Kim';
+}
+var a = new Parent();
+
+a.__proto__.name = 'Park';
+console.log(a.name);
+
+function Student(이름, 나이) {
+  this.name = 이름;
+  this.age = 나이;
+}
+
+Array.prototype.remove3 = function () {
+  for (var i = 0; i<this.length; i++) {
+    if (this[i]===3) {
+      this.splice(i,1);
+    }
+  }
+ };
+var arr = [1,2,3];
+arr.remove3();
+
+
+class 할아버지 {
+  constructor(name) {
+    this.성 = "Kim";
+    this.이름 = name;
+  }
+}
+
+class 아버지 extends 할아버지 {
+  constructor(name) {
+    super(name);
+    this.나이 = 50;
+  }
+}
+
+var 테1 = new 아버지();
+console.log(아버지.prototype);
+
+
+class 강아지 {
+  constructor(type, color) {
+    this.type = type;
+    this.color = color;
+  }
+}
+
+var 강아지1 = new 강아지('말티즈', 'white');
+console.log(강아지1);
+
+class 고양이 extends 강아지 {
+  constructor(type, color, age) {
+    super(type, color);
+    this.age = age;
+  }
+}
+
+var 고양이1 = new 고양이('코숏', 'white', 5);
+console.log(고양이1);
+
